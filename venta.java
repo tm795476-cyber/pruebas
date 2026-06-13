@@ -9,12 +9,7 @@ public class Venta {
     private final List<DetalleVenta> detalles;
     private double total;
 
-    public Venta(String id, LocalDate fecha) {
-        this.id = Objects.requireNonNull(id, "ID de venta no puede ser nulo");
-        this.fecha = Objects.requireNonNull(fecha, "Fecha de venta no puede ser nula");
-        this.detalles = new ArrayList<>();
-        this.total = 0.0;
-    }
+    //delete prueba de rama
 
     public void agregarDetalle(String prodId, String nombre, int cantidad, double precioUnitario) {
         if (cantidad <= 0 || precioUnitario < 0) {
