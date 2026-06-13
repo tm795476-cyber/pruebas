@@ -1,3 +1,7 @@
+/**
+ * Módulo de procesamiento de ventas y generación de comprobantes.
+ * Implementa la lógica transaccional y el cálculo de subtotales e impuestos.
+ */
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +23,7 @@ public class Venta {
 
     public void agregarDetalle(String prodId, String nombre, int cantidad, double precioUnitario) {
         if (cantidad <= 0 || precioUnitario < 0) {
-            throw new EntradaInvalidaException("Detalle de venta inválido: cantidad o precio incorrecto.");
+            throw new IllegalArgumentException("Detalle de venta inválido: cantidad o precio incorrecto.");
         }
 
         double subtotal = cantidad * precioUnitario;
@@ -99,4 +103,5 @@ public static class DetalleVenta {
         return String.format("%-10s | %-20s | %4d | $%,8.2f | $%,8.2f",
             prodId, nombre, cantidad, precioUnitario, subtotal);
     }
+}
 }
