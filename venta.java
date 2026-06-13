@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -34,5 +35,21 @@ public class Venta {
         );
 
         this.total += subtotal;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public List<DetalleVenta> getDetalles() {
+        return Collections.unmodifiableList(detalles);
     }
 }
