@@ -81,3 +81,22 @@ public String toString() {
 
     return sb.toString();
 }
+public static class DetalleVenta {
+    private final String prodId, nombre;
+    private final int cantidad;
+    private final double precioUnitario, subtotal;
+
+    public DetalleVenta(String prodId, String nombre, int cantidad, double precioUnitario, double subtotal) {
+        this.prodId = prodId;
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.precioUnitario = precioUnitario;
+        this.subtotal = subtotal;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-10s | %-20s | %4d | $%,8.2f | $%,8.2f",
+            prodId, nombre, cantidad, precioUnitario, subtotal);
+    }
+}
