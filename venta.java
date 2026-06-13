@@ -53,3 +53,32 @@ public class Venta {
         return Collections.unmodifiableList(detalles);
     }
 }
+@Override
+public String toString() {
+    StringBuilder sb = new StringBuilder();
+
+    sb.append("🧾 Venta #").append(id)
+      .append(" | Fecha: ")
+      .append(fecha)
+      .append("\n");
+
+    sb.append("-------------------------------------------------------------\n");
+
+    sb.append(String.format(
+        "%-10s | %-20s | %4s | %9s | %9s\n",
+        "ID",
+        "Producto",
+        "Cant",
+        "P. Unit",
+        "Subtotal"
+    ));
+
+    for (DetalleVenta d : detalles) {
+        sb.append(d).append("\n");
+    }
+
+    sb.append("-------------------------------------------------------------\n");
+    sb.append(String.format("💰 TOTAL: $%,.2f\n", total));
+
+    return sb.toString();
+}
